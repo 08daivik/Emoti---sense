@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotion Detector</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <div class="welcome-page" id="welcomePage">
+    <h1>
+  Welcome to <span style="color: #fca311;">EMOTI–SENSE</span>
+  <span class="bounce">😊</span>
+</h1>
+
+    <p>This app predicts the emotion behind your text using AI!</p>
+    <button onclick="startApp()" class="glow-button">Get Started</button>
+  </div>
+
+  <!-- App Page -->
+  <div class="container" id="appPage" style="display: none;">
+    <h1>Emotion Classifier App</h1>
+    <h2>Emotion Detection in Text</h2>
+
+    <div class="card">
+      <label for="inputText">Type Here</label>
+      <textarea id="inputText" placeholder="Type a sentence..."></textarea>
+      <button onclick="predictEmotion()">Submit</button>
+    </div>
+
+    <div class="row">
+      <div class="card half-width">
+        <h3>Original Text</h3>
+        <p id="originalText"></p>
+
+        <h3>Prediction</h3>
+        <p id="prediction" class="fade"></p>
+        <p id="confidence" class="fade"></p>
+      </div>
+
+      <div class="card half-width">
+        <h3>Prediction Probability</h3>
+        <canvas id="probabilityChart" width="320" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
